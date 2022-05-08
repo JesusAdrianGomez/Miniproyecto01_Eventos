@@ -14,9 +14,9 @@ package co.edu.univalle.modelo;
  * @author 
  */
 
-
+//la validacion de si son dos o un jugador va a ir en la interface
 public class Partida {
-    private boolean personaVPersona;
+ 
     private int numeroLanzamientos;
     private int lanzamientosTotales;
     private int lanzamientosRestantes;
@@ -24,27 +24,16 @@ public class Partida {
     private Jugador jugador1;
     private Jugador jugador2;
 
-    public Partida(boolean personaVPersona ,int numeroLanzamientos) {
-        this.personaVPersona = personaVPersona;
+    public Partida(int numeroLanzamientos, Jugador jugador1, Jugador jugador2) {
+        
+        this.jugador1 = jugador1;
+        this.jugador2 = jugador2;
         this.numeroLanzamientos = numeroLanzamientos;
         lanzamientosRestantes = this.numeroLanzamientos;
         this.lanzamientosTotales = 0;
-        lanzamientosEmpate = 0;
+        this.lanzamientosEmpate = 0;
     }
       
-    public void crearJugadores(){
-        
-        if(personaVPersona){
-            
-        }
-        
-    }
-    
-    /* Getter de Persona Vs Përsona */
-
-    public boolean isPersonaVPersona() {
-        return personaVPersona;
-    }
     
     
     

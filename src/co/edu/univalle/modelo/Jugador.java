@@ -39,24 +39,13 @@ public class Jugador {
         return sumatoriaPuntos;
     }
 
-    public void setSumatoriaPuntos(int sumatoriaPuntos) {
-        this.sumatoriaPuntos = sumatoriaPuntos;
-    }
-
     public int getLanzamientosRealizados() {
         return lanzamientosRealizados;
     }
 
-    public void setLanzamientosRealizados(int lanzamientosRealizados) {
-        this.lanzamientosRealizados = lanzamientosRealizados;
-    }
 
     public int[] getDados() {
         return dados;
-    }
-
-    public void setDados(int[] dados) {
-        this.dados = dados;
     }
     
     
