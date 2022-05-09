@@ -29,15 +29,7 @@ public class Partida {
         lanzamientosEmpate = 0;
     }
     
-    public String ganadorParcial(){
-        if(jugador1.getSumatoriaPuntos()>jugador2.getSumatoriaPuntos()){
-            return jugador1.getNombre();
-        }else if(jugador2.getSumatoriaPuntos()>jugador1.getSumatoriaPuntos()){
-            return jugador2.getNombre();
-        }else{
-            return "";
-        }
-    }
+//getters 
     
     public String quienTira(){
       
@@ -55,6 +47,23 @@ public class Partida {
     public int getLanzamientosEmpate() {
         return lanzamientosEmpate;
     }
+    
+    //metodos propios
+    
+    public String ganadorParcial(){
+    if(jugador1.getSumatoriaPuntos()>jugador2.getSumatoriaPuntos()){
+        return jugador1.getNombre();
+    }else if(jugador2.getSumatoriaPuntos()>jugador1.getSumatoriaPuntos()){
+        return jugador2.getNombre();
+    }else{
+        return "";
+        }
+    }
+    
+    public void tirando(){
+      
+    }
+        
       
     
     

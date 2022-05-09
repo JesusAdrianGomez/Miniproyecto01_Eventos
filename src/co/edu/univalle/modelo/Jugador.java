@@ -24,8 +24,8 @@ public class Jugador {
         numeroLanzamientos=numLanzamientos;
         lanzamientosRestantes= numeroLanzamientos;
         lanzamientosRealizados = 0;
-        int sumatoriaPuntos = 0;
-        int[] dados = new int[2];
+        sumatoriaPuntos = 0;
+        dados = new int[2];
     }
 
     public int getLanzamientosRestantes() {
