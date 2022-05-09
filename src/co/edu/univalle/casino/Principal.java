@@ -10,6 +10,7 @@ package co.edu.univalle.casino;
  * <alvarez.julian@correounivalle.edu.co> GitHub: https://github.com/Anezeres
  * @author
  */
+import co.edu.univalle.vista.PrePartida1;
 import co.edu.univalle.vista.PrePartida2;
 import co.edu.univalle.vista.VentanaSelecJugador;
 
@@ -17,7 +18,7 @@ public class Principal {
 
     public static void main(String[] args) {
         
-       PrePartida2 prueba = new PrePartida2();
+       PrePartida1 prueba = new PrePartida1();
   
     }
 
