@@ -133,16 +133,6 @@ public class VentanaDados extends JFrame implements ActionListener{
          
     }
     
-        public void pressLanzar(){
-        if(laPartida.getJugador2().getEsMaquina()){
-            
-        }else{
-            laPartida.tirando();
-            laPartida.verificoEmpate();
-            actualizarPantalla();
-        }
-    }
-    
     private void actualizarPantalla(){
         //jugador1
         jlSumPuntaje1.setText(laPartida.getJugador1().getSumatoriaPuntos()+"");
@@ -158,11 +148,30 @@ public class VentanaDados extends JFrame implements ActionListener{
         
     }
     
-
+    public void pressLanzar(){
+        if(laPartida.getJugador2().getEsMaquina()){
+            laPartida.tirando();
+            laPartida.cambiarTirador();
+            laPartida.tirando();
+            laPartida.cambiarTirador();
+            actualizarPantalla();
+            laPartida.verificoEmpate();
+           
+            
+        }else{
+            laPartida.tirando();
+            laPartida.verificoEmpate();
+            actualizarPantalla();
+            laPartida.cambiarTirador();
+        }
+    
+        
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         pressLanzar();
+        
     }
 }
 

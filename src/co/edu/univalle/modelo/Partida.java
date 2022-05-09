@@ -65,7 +65,7 @@ public class Partida {
         }
     }
     
-    private void cambiarTirador(){
+    public void cambiarTirador(){
         if(actualTirador==jugador1){
             actualTirador=jugador2;
         }else{
@@ -84,7 +84,7 @@ public class Partida {
     
     public void tirando(){
         actualTirador.lanzar();
-        cambiarTirador();
+        
     }
         
       
