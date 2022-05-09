@@ -11,7 +11,8 @@ package co.edu.univalle.modelo;
  * Esta clase es la encargada de generar Jugadores para la partida, enviandoles el respectivo nombre.
  * 
  * @author Julian Alexander Alvarez Payares <alvarez.julian@correounivalle.edu.co> GitHub: https://github.com/Anezeres 
- * @author 
+ * @author Jesus Adrian Gomez Cadena
+ * <jesus.cadena@correounivalle.edu.co> GitHub: https://github.com/JesusAdrianGomez
  */
 
 //la validacion de si son dos o un jugador va a ir en la interface

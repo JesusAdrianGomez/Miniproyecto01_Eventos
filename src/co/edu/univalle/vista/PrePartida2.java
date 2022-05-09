@@ -24,7 +24,7 @@ import javax.swing.SwingConstants;
 
 /**
  *
- * @author RYZEN
+ * @author Jesus Adrian Gomez Cadena <jesus.cadena@correounivalle.edu.co> GitHub: https://github.com/JesusAdrianGomez
  */
 public class PrePartida2 extends JFrame{
     

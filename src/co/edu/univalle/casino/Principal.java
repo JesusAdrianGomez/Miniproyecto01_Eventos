@@ -8,7 +8,8 @@ package co.edu.univalle.casino;
  *
  * @author Julian Alexander Alvarez Payares
  * <alvarez.julian@correounivalle.edu.co> GitHub: https://github.com/Anezeres
- * @author
+ * @author Jesus Adrian Gomez Cadena
+ * <jesus.cadena@correounivalle.edu.co> GitHub: https://github.com/JesusAdrianGomez
  */
 import co.edu.univalle.modelo.Jugador;
 import co.edu.univalle.vista.PrePartida1;

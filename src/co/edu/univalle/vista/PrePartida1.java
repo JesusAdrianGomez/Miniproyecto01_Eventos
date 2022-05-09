@@ -20,7 +20,7 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author gomex
+ * @author Jesus Adrian Gomez Cadena <jesus.cadena@correounivalle.edu.co> GitHub: https://github.com/JesusAdrianGomez
  */
 public class PrePartida1 extends JFrame {
      private JPanel jpContenido;

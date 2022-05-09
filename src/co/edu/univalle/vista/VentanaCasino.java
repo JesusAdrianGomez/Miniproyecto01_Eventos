@@ -7,7 +7,7 @@ import javax.swing.JFrame;
 
 /**
  *
- * @author gomex
+ * @author Jesus Adrian Gomez Cadena <jesus.cadena@correounivalle.edu.co> GitHub: https://github.com/JesusAdrianGomez
  */
 public class VentanaCasino {
   /*  public static void main(String[] args) {

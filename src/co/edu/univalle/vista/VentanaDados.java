@@ -6,7 +6,7 @@ package co.edu.univalle.vista;
 
 /**
  *
- * @author gomex
+ * @author Jesus Adrian Gomez Cadena <jesus.cadena@correounivalle.edu.co> GitHub: https://github.com/JesusAdrianGomez
  */
 import co.edu.univalle.modelo.Jugador;
 import co.edu.univalle.modelo.Partida;

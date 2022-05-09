@@ -8,7 +8,8 @@ package co.edu.univalle.modelo;
  * Esta clase es la encargada de generar Jugadores para la partida, enviandoles el respectivo nombre.
  * 
  * @author Julian Alexander Alvarez Payares <alvarez.julian@correounivalle.edu.co> GitHub: https://github.com/Anezeres 
- * @author 
+ * @author Jesus Adrian Gomez Cadena 
+ * <jesus.cadena@correounivalle.edu.co> GitHub: https://github.com/JesusAdrianGomez
  */
 
 public class Jugador {
@@ -28,16 +29,7 @@ public class Jugador {
         dados = new int[2];
     }
 
-    public int getLanzamientosRestantes() {
-        return lanzamientosRestantes;
-    }
-    
-    public void calcularLanzamientosRestantes(){
-        
-        lanzamientosRestantes=numeroLanzamientos-lanzamientosRealizados;
-    }
-    
-    
+
     /* Getters and Setters de la Clase Jugador */
 
     public String getNombre() {
@@ -51,6 +43,11 @@ public class Jugador {
     public int getSumatoriaPuntos() {
         return sumatoriaPuntos;
     }
+    
+        public int getLanzamientosRestantes() {
+        return lanzamientosRestantes;
+    }
+    
 
     public int getLanzamientosRealizados() {
         return lanzamientosRealizados;
@@ -60,6 +57,31 @@ public class Jugador {
     public int[] getDados() {
         return dados;
     }
+    
+    /*metodos propios*/
+    
+        public void calcularLanzamientosRestantes(){
+        
+        lanzamientosRestantes=numeroLanzamientos-lanzamientosRealizados;
+    }
+        public int puntajeTiro(){
+            return dados[0]+dados[1];
+        }
+        
+        public void lanzar(){
+            dados[0]= (int)(Math.random()*6)+1;
+            dados[1]= (int)(Math.random()*6)+1;
+            lanzamientosRealizados+=1;
+            sumatoriaPuntos+= puntajeTiro();
+            calcularLanzamientosRestantes();
+            
+        }
+        
+        public void cancelarTiro(){
+            lanzamientosRealizados=1;
+            sumatoriaPuntos-= puntajeTiro();
+            calcularLanzamientosRestantes();
+        }
     
     
     
