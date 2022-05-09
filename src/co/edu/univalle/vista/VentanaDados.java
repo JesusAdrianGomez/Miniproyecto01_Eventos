@@ -36,6 +36,9 @@ public class VentanaDados extends JFrame {
     private JLabel jlNombre1;
     private JLabel jlSumPuntaje1;
     private JLabel jlTirosRestantes1;
+    private JButton btnLanzar;
+    private JLabel jlDado1;
+    private JLabel jlDado2;
     private Partida laPartida;
 
     
@@ -84,7 +87,43 @@ public class VentanaDados extends JFrame {
         jlTirosRestantes1.setForeground(new Color(0,87,193));
         jlTirosRestantes1.setFont(new Font("arial",Font.BOLD, 12)); 
         jpContenidoGeneral.add(jlTirosRestantes1);
+        
+        //todos los datos de jugador2
+        
+        JLabel jlNombre2 = new JLabel("Jugador 2: "+laPartida.getJugador1().getNombre());
+        JLabel jlSumPuntaje2 = new JLabel(laPartida.getJugador1().getSumatoriaPuntos()+"");
+        JLabel jlTirosRestantes2 = new JLabel ("Lanzamientos restantes: "+laPartida.getJugador1().getLanzamientosRestantes()+"");
+        
+        jlNombre2.setBounds(800,10, 200,20);
+        jlNombre2.setForeground(new Color(0,87,193));
+        jlNombre2.setFont(new Font("arial",Font.BOLD, 12)); 
+        jpContenidoGeneral.add(jlNombre2);
+        
+                
+        jlSumPuntaje2.setBounds(850,180, 200,70);
+        jlSumPuntaje2.setForeground(new Color(45,87,193));
+        jlSumPuntaje2.setFont(new Font("arial",Font.BOLD, 70)); 
+        jpContenidoGeneral.add(jlSumPuntaje2);
+        
+        jlTirosRestantes2.setBounds(800,400, 200,20);
+        jlTirosRestantes2.setForeground(new Color(0,87,193));
+        jlTirosRestantes2.setFont(new Font("arial",Font.BOLD, 12)); 
+        jpContenidoGeneral.add(jlTirosRestantes2);
+        
      
+        // Todo lo de botón lanzar
+        
+        btnLanzar = new JButton("LANZAR");
+        btnLanzar.setBounds(400,450,200,50);
+        btnLanzar.setFont(new Font("arial",Font.BOLD, 20));
+        jpContenidoGeneral.add(btnLanzar);
+        
+        
+        //todo lo de los dados
+        
+        jlDado1= new JLabel("");
+        jlDado2= new JLabel("");
+      
       
        
        
