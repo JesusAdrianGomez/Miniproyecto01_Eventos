@@ -24,17 +24,19 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 
 
-public class VentanaDados extends JFrame {
+public class VentanaDados extends JFrame implements ActionListener{
 
     private JPanel jpContenidoGeneral;
     private JLabel jlNombre1;
     private JLabel jlSumPuntaje1;
     private JLabel jlTirosRestantes1;
+    private JLabel jlNombre2;
+    private JLabel jlSumPuntaje2;
+    private JLabel jlTirosRestantes2;
     private JButton btnLanzar;
     private JLabel jlDado1;
     private JLabel jlDado2;
@@ -67,9 +69,9 @@ public class VentanaDados extends JFrame {
         
         //todos los datos de jugador1
         
-        JLabel jlNombre1 = new JLabel("Jugador 1: "+laPartida.getJugador1().getNombre());
-        JLabel jlSumPuntaje1 = new JLabel(laPartida.getJugador1().getSumatoriaPuntos()+"");
-        JLabel jlTirosRestantes1 = new JLabel ("Lanzamientos restantes: "+laPartida.getJugador1().getLanzamientosRestantes()+"");
+        jlNombre1 = new JLabel("Jugador 1: "+laPartida.getJugador1().getNombre());
+        jlSumPuntaje1 = new JLabel(laPartida.getJugador1().getSumatoriaPuntos()+"");
+        jlTirosRestantes1 = new JLabel ("Lanzamientos restantes: "+laPartida.getJugador1().getLanzamientosRestantes()+"");
         
         jlNombre1.setBounds(10,10, 200,20);
         jlNombre1.setForeground(new Color(0,87,193));
@@ -89,9 +91,9 @@ public class VentanaDados extends JFrame {
         
         //todos los datos de jugador2
         
-        JLabel jlNombre2 = new JLabel("Jugador 2: "+laPartida.getJugador2().getNombre());
-        JLabel jlSumPuntaje2 = new JLabel(laPartida.getJugador2().getSumatoriaPuntos()+"");
-        JLabel jlTirosRestantes2 = new JLabel ("Lanzamientos restantes: "+laPartida.getJugador2().getLanzamientosRestantes()+"");
+        jlNombre2 = new JLabel("Jugador 2: "+laPartida.getJugador2().getNombre());
+        jlSumPuntaje2 = new JLabel(laPartida.getJugador2().getSumatoriaPuntos()+"");
+        jlTirosRestantes2 = new JLabel ("Lanzamientos restantes: "+laPartida.getJugador2().getLanzamientosRestantes()+"");
         
         jlNombre2.setBounds(800,10, 200,20);
         jlNombre2.setForeground(new Color(0,87,193));
@@ -116,8 +118,8 @@ public class VentanaDados extends JFrame {
         btnLanzar.setBounds(400,450,200,50);
         btnLanzar.setFont(new Font("arial",Font.BOLD, 20));
         jpContenidoGeneral.add(btnLanzar);
-        
-        
+        btnLanzar.addActionListener(this);
+                
         //todo lo de los dados
         
         jlDado1 = new JLabel(new ImageIcon("src/imagenes/1.jpg"));
@@ -129,6 +131,38 @@ public class VentanaDados extends JFrame {
         jpContenidoGeneral.add(jlDado1);
         jpContenidoGeneral.add(jlDado2);
          
+    }
+    
+        public void pressLanzar(){
+        if(laPartida.getJugador2().getEsMaquina()){
+            
+        }else{
+            laPartida.tirando();
+            laPartida.verificoEmpate();
+            actualizarPantalla();
+        }
+    }
+    
+    private void actualizarPantalla(){
+        //jugador1
+        jlSumPuntaje1.setText(laPartida.getJugador1().getSumatoriaPuntos()+"");
+        jlTirosRestantes1.setText("Lanzamientos restantes: "+laPartida.getJugador1().getLanzamientosRestantes()+"");
+        
+        //jugador2
+        jlSumPuntaje2.setText(laPartida.getJugador2().getSumatoriaPuntos()+"");
+        jlTirosRestantes2.setText("Lanzamientos restantes: "+laPartida.getJugador2().getLanzamientosRestantes()+"");
+        
+        //dados
+        jlDado1.setIcon(new ImageIcon("src/imagenes/"+laPartida.getActualTirador().getDados()[0]+".jpg") );
+        jlDado2.setIcon(new ImageIcon("src/imagenes/"+laPartida.getActualTirador().getDados()[1]+".jpg") );
+        
+    }
+    
+
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        pressLanzar();
     }
 }
 

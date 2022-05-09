@@ -45,6 +45,10 @@ public class Partida {
         return lanzamientosEmpate;
     }
     
+    public Jugador getActualTirador(){
+        return actualTirador;
+    }
+    
     //metodos propios
     
     public String quienTira(){  
