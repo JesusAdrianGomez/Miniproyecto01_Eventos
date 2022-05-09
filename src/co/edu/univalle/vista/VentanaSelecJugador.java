@@ -59,15 +59,12 @@ public class VentanaSelecJugador extends JFrame implements ActionListener {
     public void actionPerformed (ActionEvent a){
         
         if(a.getSource()== btnJugadorVsJugador){
-           setVisible(false);
+           PrePartida2 Prejuego= new PrePartida2();
 
-
-           
-           
-        }else{
-           //VentanaNombres("primerjugador"); //lnstanciar una vez la ventana nombre
+        }else if(a.getSource()== btnJugadorVsMaquina){
+           PrePartida1 Prejuego= new PrePartida1();
         }
-       
+        dispose();
   
     }
     

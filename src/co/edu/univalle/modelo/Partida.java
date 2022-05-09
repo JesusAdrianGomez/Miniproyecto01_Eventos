@@ -17,9 +17,6 @@ package co.edu.univalle.modelo;
 //la validacion de si son dos o un jugador va a ir en la interface
 public class Partida {
  
-    private int numeroLanzamientos;
-    private int lanzamientosTotales;
-    private int lanzamientosRestantes;
     private int lanzamientosEmpate;
     private Jugador jugador1;
     private Jugador jugador2;
@@ -29,9 +26,6 @@ public class Partida {
         
         this.jugador1 = jugador1;
         this.jugador2 = jugador2;
-        this.numeroLanzamientos = numeroLanzamientos;
-        lanzamientosRestantes = this.numeroLanzamientos;
-        lanzamientosTotales = 0;
         lanzamientosEmpate = 0;
     }
     
@@ -48,6 +42,18 @@ public class Partida {
     public String quienTira(){
       
         return actualTirador.getNombre();
+    }
+
+    public Jugador getJugador1(){
+        return jugador1;
+    }
+
+    public Jugador getJugador2() {
+        return jugador2;
+    }
+
+    public int getLanzamientosEmpate() {
+        return lanzamientosEmpate;
     }
       
     

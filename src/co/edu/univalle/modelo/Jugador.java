@@ -15,13 +15,26 @@ public class Jugador {
     String nombre;
     int sumatoriaPuntos;
     int lanzamientosRealizados;
+    private int numeroLanzamientos;
+    int lanzamientosRestantes;
     int[] dados;
 
-    public Jugador(String nombre) {
+    public Jugador(String nombre,int numLanzamientos) {
         this.nombre = nombre;
+        numeroLanzamientos=numLanzamientos;
+        lanzamientosRestantes= numeroLanzamientos;
         lanzamientosRealizados = 0;
         int sumatoriaPuntos = 0;
         int[] dados = new int[2];
+    }
+
+    public int getLanzamientosRestantes() {
+        return lanzamientosRestantes;
+    }
+    
+    public void calcularLanzamientosRestantes(){
+        
+        lanzamientosRestantes=numeroLanzamientos-lanzamientosRealizados;
     }
     
     
