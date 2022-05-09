@@ -16,10 +16,9 @@ import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -121,13 +120,15 @@ public class VentanaDados extends JFrame {
         
         //todo lo de los dados
         
-        jlDado1= new JLabel("");
-        jlDado2= new JLabel("");
-      
-      
-       
-       
+        jlDado1 = new JLabel(new ImageIcon("src/imagenes/1.jpg"));
+        jlDado2 = new JLabel(new ImageIcon("src/imagenes/1.jpg"));
         
+        jlDado1.setBounds(220,100,236,236);
+        jlDado2.setBounds(520,100,236,236);
+        
+        jpContenidoGeneral.add(jlDado1);
+        jpContenidoGeneral.add(jlDado2);
+         
     }
 }
 
