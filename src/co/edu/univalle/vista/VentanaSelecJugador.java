@@ -1,7 +1,10 @@
 
 package co.edu.univalle.vista;
 
+import co.edu.univalle.modelo.Jugador;
+import co.edu.univalle.modelo.Partida;
 import java.awt.Container;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -23,6 +26,7 @@ public class VentanaSelecJugador extends JFrame implements ActionListener {
         
         setVisible(true);
         setSize(600,300);
+        setResizable(false);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         iniciarComponentes();
@@ -31,6 +35,7 @@ public class VentanaSelecJugador extends JFrame implements ActionListener {
     
     private void iniciarComponentes(){
         lblEncabezado = new JLabel("Selecciona cómo quieres jugar");
+        lblEncabezado.setFont(new Font("arial", Font.BOLD, 20)); 
         btnJugadorVsJugador = new JButton ("jugador vs jugador");
         btnJugadorVsMaquina = new JButton ("jugador vs maquina");
         
@@ -44,7 +49,7 @@ public class VentanaSelecJugador extends JFrame implements ActionListener {
         
         btnJugadorVsJugador.setBounds(50, 180, 200, 50);
         btnJugadorVsMaquina.setBounds(350, 180, 200, 50);
-        lblEncabezado.setBounds(200, 80, 200, 20);
+        lblEncabezado.setBounds(150, 80, 400, 30);
         
         btnJugadorVsMaquina.addActionListener(this);
         btnJugadorVsJugador.addActionListener(this);
@@ -52,12 +57,18 @@ public class VentanaSelecJugador extends JFrame implements ActionListener {
     
     @Override
     public void actionPerformed (ActionEvent a){
+        
         if(a.getSource()== btnJugadorVsJugador){
-            //instanciar dos veces la ventana nombre
+           setVisible(false);
+
+
+           
+           
         }else{
-            //lnstanciar una vez la ventana nombre
+           //VentanaNombres("primerjugador"); //lnstanciar una vez la ventana nombre
         }
-        setVisible(false);
+       
+  
     }
     
 }

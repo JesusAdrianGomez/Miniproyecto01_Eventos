@@ -23,6 +23,7 @@ public class Partida {
     private int lanzamientosEmpate;
     private Jugador jugador1;
     private Jugador jugador2;
+    private Jugador actualTirador;
 
     public Partida(int numeroLanzamientos, Jugador jugador1, Jugador jugador2) {
         
@@ -30,8 +31,23 @@ public class Partida {
         this.jugador2 = jugador2;
         this.numeroLanzamientos = numeroLanzamientos;
         lanzamientosRestantes = this.numeroLanzamientos;
-        this.lanzamientosTotales = 0;
-        this.lanzamientosEmpate = 0;
+        lanzamientosTotales = 0;
+        lanzamientosEmpate = 0;
+    }
+    
+    public String ganadorParcial(){
+        if(jugador1.getSumatoriaPuntos()>jugador2.getSumatoriaPuntos()){
+            return jugador1.getNombre();
+        }else if(jugador2.getSumatoriaPuntos()>jugador1.getSumatoriaPuntos()){
+            return jugador2.getNombre();
+        }else{
+            return "";
+        }
+    }
+    
+    public String quienTira(){
+      
+        return actualTirador.getNombre();
     }
       
     
