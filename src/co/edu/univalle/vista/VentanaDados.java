@@ -43,7 +43,7 @@ public class VentanaDados extends JFrame {
     
     public VentanaDados(Jugador jugador1, Jugador jugador2, int numLanzamientos){
         
-        laPartida = new Partida(numLanzamientos,jugador1,jugador2);
+        laPartida = new Partida(jugador1,jugador2);
         inciarComponentes();
         setSize(1000,550);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -89,9 +89,9 @@ public class VentanaDados extends JFrame {
         
         //todos los datos de jugador2
         
-        JLabel jlNombre2 = new JLabel("Jugador 2: "+laPartida.getJugador1().getNombre());
-        JLabel jlSumPuntaje2 = new JLabel(laPartida.getJugador1().getSumatoriaPuntos()+"");
-        JLabel jlTirosRestantes2 = new JLabel ("Lanzamientos restantes: "+laPartida.getJugador1().getLanzamientosRestantes()+"");
+        JLabel jlNombre2 = new JLabel("Jugador 2: "+laPartida.getJugador2().getNombre());
+        JLabel jlSumPuntaje2 = new JLabel(laPartida.getJugador2().getSumatoriaPuntos()+"");
+        JLabel jlTirosRestantes2 = new JLabel ("Lanzamientos restantes: "+laPartida.getJugador2().getLanzamientosRestantes()+"");
         
         jlNombre2.setBounds(800,10, 200,20);
         jlNombre2.setForeground(new Color(0,87,193));

@@ -14,14 +14,16 @@ package co.edu.univalle.modelo;
 
 public class Jugador {
     String nombre;
+    boolean esMaquina;
     int sumatoriaPuntos;
     int lanzamientosRealizados;
     private int numeroLanzamientos;
     int lanzamientosRestantes;
     int[] dados;
 
-    public Jugador(String nombre,int numLanzamientos) {
+    public Jugador(String nombre,int numLanzamientos, boolean esMaquina) {
         this.nombre = nombre;
+        this.esMaquina= esMaquina;
         numeroLanzamientos=numLanzamientos;
         lanzamientosRestantes= numeroLanzamientos;
         lanzamientosRealizados = 0;

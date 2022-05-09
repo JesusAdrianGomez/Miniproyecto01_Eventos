@@ -23,20 +23,16 @@ public class Partida {
     private Jugador jugador2;
     private Jugador actualTirador;
 
-    public Partida(int numeroLanzamientos, Jugador jugador1, Jugador jugador2) {
+    public Partida(Jugador jugador1, Jugador jugador2) {
         
         this.jugador1 = jugador1;
         this.jugador2 = jugador2;
+        actualTirador= this.jugador1;
         lanzamientosEmpate = 0;
     }
     
 //getters 
     
-    public String quienTira(){
-      
-        return actualTirador.getNombre();
-    }
-
     public Jugador getJugador1(){
         return jugador1;
     }
@@ -51,6 +47,10 @@ public class Partida {
     
     //metodos propios
     
+    public String quienTira(){  
+        return actualTirador.getNombre();
+    }
+    
     public String ganadorParcial(){
     if(jugador1.getSumatoriaPuntos()>jugador2.getSumatoriaPuntos()){
         return jugador1.getNombre();
@@ -61,8 +61,26 @@ public class Partida {
         }
     }
     
+    private void cambiarTirador(){
+        if(actualTirador==jugador1){
+            actualTirador=jugador2;
+        }else{
+            actualTirador=jugador1;
+        }
+        
+    }
+    
+    public void verificoEmpate(){
+        if((jugador1.puntajeTiro()==jugador2.puntajeTiro())&&(jugador1.getLanzamientosRealizados()==jugador2.getLanzamientosRealizados())){
+            jugador1.cancelarTiro();
+            jugador2.cancelarTiro();            
+        }
+    }
+    
+    
     public void tirando(){
-      
+        actualTirador.lanzar();
+        cambiarTirador();
     }
         
       
