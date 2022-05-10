@@ -22,6 +22,7 @@ public class Partida {
     private Jugador jugador1;
     private Jugador jugador2;
     private Jugador actualTirador;
+    private Jugador ganador;
 
     public Partida(Jugador jugador1, Jugador jugador2) {
         
@@ -47,6 +48,10 @@ public class Partida {
     
     public Jugador getActualTirador(){
         return actualTirador;
+    }
+
+    public Jugador getGanador() {
+        return ganador;
     }
     
     //metodos propios
@@ -85,6 +90,17 @@ public class Partida {
     public void tirando(){
         actualTirador.lanzar();
         
+    }
+    
+    public void indicarGanador(){
+        if(jugador1.getLanzamientosRestantes()==0&&jugador2.getLanzamientosRestantes()==0){
+            if(jugador1.getSumatoriaPuntos()>jugador2.getSumatoriaPuntos()){
+                ganador=jugador1;
+            }else if(jugador2.getSumatoriaPuntos()>jugador1.getSumatoriaPuntos()){
+                ganador=jugador2;
+            }
+        }
+     
     }
         
       

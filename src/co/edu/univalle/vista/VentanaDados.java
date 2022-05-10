@@ -38,6 +38,8 @@ public class VentanaDados extends JFrame implements ActionListener{
     private JLabel jlSumPuntaje2;
     private JLabel jlTirosRestantes2;
     private JButton btnLanzar;
+    private JLabel jlGanadorParcial;
+    private JLabel jlProximoTirador;
     private JLabel jlDado1;
     private JLabel jlDado2;
     private Partida laPartida;
@@ -130,6 +132,21 @@ public class VentanaDados extends JFrame implements ActionListener{
         
         jpContenidoGeneral.add(jlDado1);
         jpContenidoGeneral.add(jlDado2);
+        
+        //todo lo general
+        
+        jlGanadorParcial = new JLabel("va ganando: "+laPartida.ganadorParcial());
+        jlGanadorParcial.setBounds(450, 10, 200, 50);
+        jlGanadorParcial.setForeground(new Color(0,87,193));
+        jlGanadorParcial.setFont(new Font("arial",Font.BOLD, 12)); 
+        jpContenidoGeneral.add(jlGanadorParcial);
+        
+        jlProximoTirador = new JLabel("tira: "+laPartida.getActualTirador().getNombre());
+        jlProximoTirador.setBounds(450, 350, 200, 50);
+        jlProximoTirador.setForeground(new Color(0,87,193));
+        jlProximoTirador.setFont(new Font("arial",Font.BOLD, 12)); 
+        jpContenidoGeneral.add(jlProximoTirador);
+        
          
     }
     
@@ -146,6 +163,19 @@ public class VentanaDados extends JFrame implements ActionListener{
         jlDado1.setIcon(new ImageIcon("src/imagenes/"+laPartida.getActualTirador().getDados()[0]+".jpg") );
         jlDado2.setIcon(new ImageIcon("src/imagenes/"+laPartida.getActualTirador().getDados()[1]+".jpg") );
         
+        //general
+        jlGanadorParcial.setText("va ganando: "+laPartida.ganadorParcial());
+         
+    }
+    
+    public void actualizarTirador(){
+        jlProximoTirador.setText("tira: "+laPartida.getActualTirador().getNombre());
+    }
+ 
+    public void finalPartida(){
+        if(laPartida.getJugador1().getLanzamientosRestantes()==0&&laPartida.getJugador2().getLanzamientosRestantes()==0){
+            
+        }
     }
     
     public void pressLanzar(){
@@ -163,6 +193,8 @@ public class VentanaDados extends JFrame implements ActionListener{
             laPartida.verificoEmpate();
             actualizarPantalla();
             laPartida.cambiarTirador();
+            jlProximoTirador.setText("tira: "+laPartida.getActualTirador().getNombre());
+            
         }
     
         
