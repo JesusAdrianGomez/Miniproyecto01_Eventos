@@ -5,11 +5,14 @@ package co.edu.univalle.modelo;
  * Archivo: Jugador.java
  * Fecha de Creación: 07/05/2022
  * 
- * Esta clase es la encargada de generar Jugadores para la partida, enviandoles el respectivo nombre.
+ * Esta clase es la encargada de modelar Jugadores para la partida, con el respectivo nombre.
  * 
  * @author Julian Alexander Alvarez Payares <alvarez.julian@correounivalle.edu.co> GitHub: https://github.com/Anezeres 
- * @author Jesus Adrian Gomez Cadena 
- * <jesus.cadena@correounivalle.edu.co> GitHub: https://github.com/JesusAdrianGomez
+ * @author Jesus Adrian Gomez Cadena <jesus.cadena@correounivalle.edu.co> GitHub: https://github.com/JesusAdrianGomez
+ * Profesor: Luis Yovany Romo Portilla
+ * Grupo de FPOE: 01
+ * Numero laboratorio: 1
+
  */
 
 public class Jugador {

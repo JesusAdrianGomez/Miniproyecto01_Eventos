@@ -2,6 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+/**
+ * Archivo: PrePartida2.java
+ * Fecha de Creación: 07/05/2022
+ * 
+
+ * Esta clase es la encargada de modelar la pedida de nombres y numero de tiros para las partidas.
+ * 
+ * @author Julian Alexander Alvarez Payares <alvarez.julian@correounivalle.edu.co> GitHub: https://github.com/Anezeres 
+ * @author Jesus Adrian Gomez Cadena <jesus.cadena@correounivalle.edu.co> GitHub: https://github.com/JesusAdrianGomez
+ * Profesor: Luis Yovany Romo Portilla
+ * Grupo de FPOE: 01
+ * Numero laboratorio: 1
+ */
+
 package co.edu.univalle.vista;
 
 import co.edu.univalle.modelo.Jugador;

@@ -8,11 +8,13 @@ package co.edu.univalle.modelo;
  * Archivo: Partida.java
  * Fecha de Creación: 07/05/2022
  * 
- * Esta clase es la encargada de generar Jugadores para la partida, enviandoles el respectivo nombre.
+ * Esta clase es la encargada de modelar partidas, mantienen la logica general del juego, desde el incio del juego como tal hasta su fin.
  * 
  * @author Julian Alexander Alvarez Payares <alvarez.julian@correounivalle.edu.co> GitHub: https://github.com/Anezeres 
- * @author Jesus Adrian Gomez Cadena
- * <jesus.cadena@correounivalle.edu.co> GitHub: https://github.com/JesusAdrianGomez
+ * @author Jesus Adrian Gomez Cadena <jesus.cadena@correounivalle.edu.co> GitHub: https://github.com/JesusAdrianGomez
+ * Profesor: Luis Yovany Romo Portilla
+ * Grupo de FPOE: 01
+ * Numero laboratorio: 1
  */
 
 //la validacion de si son dos o un jugador va a ir en la interface

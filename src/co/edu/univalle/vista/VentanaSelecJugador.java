@@ -1,4 +1,17 @@
 
+/**
+ * Archivo: VentanaSelecJugador.java
+ * Fecha de Creación: 07/05/2022
+ * 
+ * Esta clase es la encargada de la apariencia de la ventana incial que pide el modo de juego que queie jugar el usuario.
+ * 
+ * @author Julian Alexander Alvarez Payares <alvarez.julian@correounivalle.edu.co> GitHub: https://github.com/Anezeres 
+ * @author Jesus Adrian Gomez Cadena <jesus.cadena@correounivalle.edu.co> GitHub: https://github.com/JesusAdrianGomez
+ * Profesor: Luis Yovany Romo Portilla
+ * Grupo de FPOE: 01
+ * Numero laboratorio: 1
+ */
+
 package co.edu.univalle.vista;
 
 import co.edu.univalle.modelo.Jugador;
@@ -12,10 +25,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
-/**
- *
- * @author Jesus Adrian Gomez Cadena <jesus.cadena@correounivalle.edu.co> GitHub: https://github.com/JesusAdrianGomez
- */
 public class VentanaSelecJugador extends JFrame implements ActionListener {
     
     private JLabel lblEncabezado;
