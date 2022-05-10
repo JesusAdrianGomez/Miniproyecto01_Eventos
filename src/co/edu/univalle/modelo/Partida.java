@@ -82,7 +82,8 @@ public class Partida {
     public void verificoEmpate(){
         if((jugador1.puntajeTiro()==jugador2.puntajeTiro())&&(jugador1.getLanzamientosRealizados()==jugador2.getLanzamientosRealizados())){
             jugador1.cancelarTiro();
-            jugador2.cancelarTiro();            
+            jugador2.cancelarTiro();  
+            lanzamientosEmpate++;
         }
     }
     

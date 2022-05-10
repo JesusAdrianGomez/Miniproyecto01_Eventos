@@ -12,19 +12,16 @@ import co.edu.univalle.modelo.Jugador;
 import co.edu.univalle.modelo.Partida;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Image;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
+import javax.swing.Timer;
+
 
 
 
@@ -40,9 +37,16 @@ public class VentanaDados extends JFrame implements ActionListener{
     private JButton btnLanzar;
     private JLabel jlGanadorParcial;
     private JLabel jlProximoTirador;
+    private JLabel jlLanzamientosJ1;
+    private JLabel jlLanzamientosJ2;
+    private JLabel jlLanzamientosEmpate;
+    private JLabel jlLanzamientosTotales;
     private JLabel jlDado1;
     private JLabel jlDado2;
     private Partida laPartida;
+    private Timer tiempo;
+    private int min,seg;
+    private JLabel time;
 
     
     public VentanaDados(Jugador jugador1, Jugador jugador2){
@@ -69,11 +73,22 @@ public class VentanaDados extends JFrame implements ActionListener{
         jpContenidoGeneral.setBackground(Color.WHITE);
         add(jpContenidoGeneral);
         
+        //tiempo
+        tiempo = new Timer(1000, this);
+        tiempo.start();
+        
+        String tiemS = (min<=9?"0":"")+min+":"+(seg<=9?"0":"")+seg;
+        time = new JLabel("Tiempo: "+tiemS);
+        time.setBounds(440,5, 200, 40);
+        jpContenidoGeneral.add(time);
+        
+        
         //todos los datos de jugador1
         
         jlNombre1 = new JLabel("Jugador 1: "+laPartida.getJugador1().getNombre());
         jlSumPuntaje1 = new JLabel(laPartida.getJugador1().getSumatoriaPuntos()+"");
-        jlTirosRestantes1 = new JLabel ("Lanzamientos restantes: "+laPartida.getJugador1().getLanzamientosRestantes()+"");
+        jlTirosRestantes1 = new JLabel ("Lanzamientos restantes: "+laPartida.getJugador1().getLanzamientosRestantes());
+        jlLanzamientosJ1 = new JLabel("Lanzamientos efecutados: "+laPartida.getJugador1().getLanzamientosRealizados());
         
         jlNombre1.setBounds(10,10, 200,20);
         jlNombre1.setForeground(new Color(0,87,193));
@@ -91,11 +106,17 @@ public class VentanaDados extends JFrame implements ActionListener{
         jlTirosRestantes1.setFont(new Font("arial",Font.BOLD, 12)); 
         jpContenidoGeneral.add(jlTirosRestantes1);
         
+        jlLanzamientosJ1.setBounds(10,450, 200,20);
+        jlLanzamientosJ1.setForeground(new Color(0,87,193));
+        jlLanzamientosJ1.setFont(new Font("arial",Font.BOLD, 12)); 
+        jpContenidoGeneral.add(jlLanzamientosJ1);
+        
         //todos los datos de jugador2
         
         jlNombre2 = new JLabel("Jugador 2: "+laPartida.getJugador2().getNombre());
         jlSumPuntaje2 = new JLabel(laPartida.getJugador2().getSumatoriaPuntos()+"");
         jlTirosRestantes2 = new JLabel ("Lanzamientos restantes: "+laPartida.getJugador2().getLanzamientosRestantes()+"");
+        jlLanzamientosJ2 = new JLabel ("Lanzamientos efecutados: "+laPartida.getJugador2().getLanzamientosRealizados());
         
         jlNombre2.setBounds(800,10, 200,20);
         jlNombre2.setForeground(new Color(0,87,193));
@@ -113,6 +134,10 @@ public class VentanaDados extends JFrame implements ActionListener{
         jlTirosRestantes2.setFont(new Font("arial",Font.BOLD, 12)); 
         jpContenidoGeneral.add(jlTirosRestantes2);
         
+        jlLanzamientosJ2.setBounds(800,450, 200,20);
+        jlLanzamientosJ2.setForeground(new Color(0,87,193));
+        jlTirosRestantes2.setFont(new Font("arial",Font.BOLD, 12)); 
+        jpContenidoGeneral.add(jlLanzamientosJ2);
      
         // Todo lo de botón lanzar
         
@@ -135,29 +160,49 @@ public class VentanaDados extends JFrame implements ActionListener{
         
         //todo lo general
         
+        jlLanzamientosTotales = new JLabel("Lanzamientos a efectuar "+laPartida.getJugador1().getNumeroLanzamientos());
+        jlLanzamientosTotales.setBounds(410, 50, 200, 50);
+        jlLanzamientosTotales.setForeground(new Color(0,87,193));
+        jlLanzamientosTotales.setFont(new Font("arial",Font.BOLD, 12)); 
+        jpContenidoGeneral.add(jlLanzamientosTotales);
+        
         jlGanadorParcial = new JLabel("va ganando: "+laPartida.ganadorParcial());
-        jlGanadorParcial.setBounds(450, 10, 200, 50);
+        jlGanadorParcial.setBounds(450, 20, 200, 50);
         jlGanadorParcial.setForeground(new Color(0,87,193));
         jlGanadorParcial.setFont(new Font("arial",Font.BOLD, 12)); 
         jpContenidoGeneral.add(jlGanadorParcial);
         
         jlProximoTirador = new JLabel("tira: "+laPartida.getActualTirador().getNombre());
-        jlProximoTirador.setBounds(450, 350, 200, 50);
+        jlProximoTirador.setBounds(450, 400, 200, 50);
         jlProximoTirador.setForeground(new Color(0,87,193));
         jlProximoTirador.setFont(new Font("arial",Font.BOLD, 12)); 
         jpContenidoGeneral.add(jlProximoTirador);
         
+        jlLanzamientosEmpate = new JLabel("Empates: "+laPartida.getLanzamientosEmpate());
+        jlLanzamientosEmpate.setBounds(450, 350, 200, 50);
+        jlLanzamientosEmpate.setForeground(new Color(0,87,193));
+        jlLanzamientosEmpate.setFont(new Font("arial",Font.BOLD, 12)); 
+        jpContenidoGeneral.add(jlLanzamientosEmpate);
+        
+        
          
+    }
+    
+    private void actualizarLabel(){
+        String tiemS = (min<=9?"0":"")+min+":"+(seg<=9?"0":"")+seg;
+        time.setText("Tiempo: "+tiemS);
     }
     
     private void actualizarPantalla(){
         //jugador1
         jlSumPuntaje1.setText(laPartida.getJugador1().getSumatoriaPuntos()+"");
         jlTirosRestantes1.setText("Lanzamientos restantes: "+laPartida.getJugador1().getLanzamientosRestantes()+"");
+        jlLanzamientosJ1.setText("Lanzamientos efecutados: "+laPartida.getJugador1().getLanzamientosRealizados());
         
         //jugador2
         jlSumPuntaje2.setText(laPartida.getJugador2().getSumatoriaPuntos()+"");
         jlTirosRestantes2.setText("Lanzamientos restantes: "+laPartida.getJugador2().getLanzamientosRestantes()+"");
+        jlLanzamientosJ2.setText("Lanzamientos efecutados: "+laPartida.getJugador2().getLanzamientosRealizados());
         
         //dados
         jlDado1.setIcon(new ImageIcon("src/imagenes/"+laPartida.getActualTirador().getDados()[0]+".jpg") );
@@ -165,6 +210,8 @@ public class VentanaDados extends JFrame implements ActionListener{
         
         //general
         jlGanadorParcial.setText("va ganando: "+laPartida.ganadorParcial());
+        jlGanadorParcial.setBounds(420, 20, 200, 50);
+        jlLanzamientosEmpate.setText("Empates: "+laPartida.getLanzamientosEmpate());
          
     }
     
@@ -175,7 +222,7 @@ public class VentanaDados extends JFrame implements ActionListener{
     public void finalPartida(){
         if(laPartida.getJugador1().getLanzamientosRestantes()==0&&laPartida.getJugador2().getLanzamientosRestantes()==0){
             laPartida.indicarGanador();
-            
+            tiempo.stop();
             if(laPartida.getGanador()==null){
                 JOptionPane.showMessageDialog(null,"Empate con "+laPartida.getJugador1().getSumatoriaPuntos()+" puntos", "Fin de la partida",
             JOptionPane.INFORMATION_MESSAGE);
@@ -254,7 +301,18 @@ public class VentanaDados extends JFrame implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if( e.getSource()==btnLanzar ){
         pressLanzar();
+        } 
+        if(e.getSource()==tiempo){
+            actualizarLabel();
+            seg++; 
+            if(seg==60){
+                seg = 0;
+                min++;
+            }
+             
+        }   
         
     }
 }

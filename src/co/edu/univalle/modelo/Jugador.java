@@ -84,10 +84,6 @@ public class Jugador {
             lanzamientosRealizados+=1;
             sumatoriaPuntos+= puntajeTiro();
             calcularLanzamientosRestantes();
-            System.out.println("dado 1: "+dados[0] );
-            System.out.println("dado 2: "+dados[1] );
-            System.out.println("tirando"+nombre );
-            
         }
         
         public void cancelarTiro(){

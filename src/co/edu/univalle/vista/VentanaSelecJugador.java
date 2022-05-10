@@ -3,6 +3,7 @@ package co.edu.univalle.vista;
 
 import co.edu.univalle.modelo.Jugador;
 import co.edu.univalle.modelo.Partida;
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -36,6 +37,7 @@ public class VentanaSelecJugador extends JFrame implements ActionListener {
     private void iniciarComponentes(){
         lblEncabezado = new JLabel("Selecciona cómo quieres jugar");
         lblEncabezado.setFont(new Font("arial", Font.BOLD, 20)); 
+        lblEncabezado.setForeground(new Color(0,87,193));
         btnJugadorVsJugador = new JButton ("jugador vs jugador");
         btnJugadorVsMaquina = new JButton ("jugador vs maquina");
         
