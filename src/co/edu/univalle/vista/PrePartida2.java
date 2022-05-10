@@ -94,21 +94,22 @@ public class PrePartida2 extends JFrame{
         
         jlNombre1.setBounds(150,10, 519,35);
         jlNombre1.setForeground(new Color(0,87,193));
-        jlNombre1.setFont(new Font("arial", Font.BOLD, 20)); 
+        jlNombre1.setFont(new Font("Cooper Black", Font.BOLD, 20)); 
         
         
                 
         jlNombre2.setBounds(150,90, 519,35);
         jlNombre2.setForeground(new Color(0,87,193));
-        jlNombre2.setFont(new Font("arial", Font.BOLD, 20)); 
+        jlNombre2.setFont(new Font("Cooper Black", Font.BOLD, 20)); 
         
         jlLanzamientos.setBounds(150,170, 519,35);
         jlLanzamientos.setForeground(new Color(0,87,193));
-        jlLanzamientos.setFont(new Font("arial", Font.BOLD, 20)); 
+        jlLanzamientos.setFont(new Font("Cooper Black", Font.BOLD, 20)); 
         
         
         btnAceptar = new JButton("ACEPTAR");
         btnAceptar.setBounds(200,290, 150,35);
+        btnAceptar.setFont(new Font("Arial Rounded MT Bold",2, 15));
         
         jpContenido.add(btnAceptar);
         
@@ -122,19 +123,19 @@ public class PrePartida2 extends JFrame{
         txtPedirN1 = new JTextField();
         txtPedirN1.setHorizontalAlignment(JTextField.CENTER);
         txtPedirN1.setForeground(Color.GRAY);
-        txtPedirN1.setFont(new Font("arial", Font.BOLD, 20)); 
+        txtPedirN1.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20)); 
         
         txtPedirN2 = new JTextField();
         txtPedirN2.setHorizontalAlignment(JTextField.CENTER);
         txtPedirN2.setForeground(Color.GRAY);
-        txtPedirN2.setFont(new Font("arial", Font.BOLD, 20)); 
+        txtPedirN2.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20)); 
         
         
         
         txtPedirLanzamientos = new JTextField();
         txtPedirLanzamientos.setHorizontalAlignment(JTextField.CENTER);
         txtPedirLanzamientos.setForeground(Color.GRAY);
-        txtPedirLanzamientos.setFont(new Font("arial", Font.BOLD, 20)); 
+        txtPedirLanzamientos.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 20)); 
        
         
         jpContenido.add(txtPedirN1);

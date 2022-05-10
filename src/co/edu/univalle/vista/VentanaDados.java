@@ -91,7 +91,7 @@ public class VentanaDados extends JFrame implements ActionListener{
         
         String tiemS = (min<=9?"0":"")+min+":"+(seg<=9?"0":"")+seg;
         time = new JLabel("Tiempo: "+tiemS);
-        time.setBounds(440,5, 200, 40);
+        time.setBounds(445,5, 200, 40);
         jpContenidoGeneral.add(time);
         
         
@@ -104,23 +104,23 @@ public class VentanaDados extends JFrame implements ActionListener{
         
         jlNombre1.setBounds(10,10, 200,20);
         jlNombre1.setForeground(new Color(0,87,193));
-        jlNombre1.setFont(new Font("arial",Font.BOLD, 12)); 
+        jlNombre1.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 12)); 
         jpContenidoGeneral.add(jlNombre1);
         
                 
         jlSumPuntaje1.setBounds(70,180, 200,70);
         jlSumPuntaje1.setForeground(new Color(45,87,193));
-        jlSumPuntaje1.setFont(new Font("arial",Font.BOLD, 70)); 
+        jlSumPuntaje1.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 70)); 
         jpContenidoGeneral.add(jlSumPuntaje1);
         
         jlTirosRestantes1.setBounds(10,400, 200,20);
         jlTirosRestantes1.setForeground(new Color(0,87,193));
-        jlTirosRestantes1.setFont(new Font("arial",Font.BOLD, 12)); 
+        jlTirosRestantes1.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 12)); 
         jpContenidoGeneral.add(jlTirosRestantes1);
         
         jlLanzamientosJ1.setBounds(10,450, 200,20);
         jlLanzamientosJ1.setForeground(new Color(0,87,193));
-        jlLanzamientosJ1.setFont(new Font("arial",Font.BOLD, 12)); 
+        jlLanzamientosJ1.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 12)); 
         jpContenidoGeneral.add(jlLanzamientosJ1);
         
         //todos los datos de jugador2
@@ -132,30 +132,30 @@ public class VentanaDados extends JFrame implements ActionListener{
         
         jlNombre2.setBounds(800,10, 200,20);
         jlNombre2.setForeground(new Color(0,87,193));
-        jlNombre2.setFont(new Font("arial",Font.BOLD, 12)); 
+        jlNombre2.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 12)); 
         jpContenidoGeneral.add(jlNombre2);
         
                 
         jlSumPuntaje2.setBounds(850,180, 200,70);
         jlSumPuntaje2.setForeground(new Color(45,87,193));
-        jlSumPuntaje2.setFont(new Font("arial",Font.BOLD, 70)); 
+        jlSumPuntaje2.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 70)); 
         jpContenidoGeneral.add(jlSumPuntaje2);
         
-        jlTirosRestantes2.setBounds(800,400, 200,20);
+        jlTirosRestantes2.setBounds(790,400, 200,20);
         jlTirosRestantes2.setForeground(new Color(0,87,193));
-        jlTirosRestantes2.setFont(new Font("arial",Font.BOLD, 12)); 
+        jlTirosRestantes2.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 12)); 
         jpContenidoGeneral.add(jlTirosRestantes2);
         
-        jlLanzamientosJ2.setBounds(800,450, 200,20);
+        jlLanzamientosJ2.setBounds(790,450, 200,20);
         jlLanzamientosJ2.setForeground(new Color(0,87,193));
-        jlTirosRestantes2.setFont(new Font("arial",Font.BOLD, 12)); 
+        jlLanzamientosJ2.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 12)); 
         jpContenidoGeneral.add(jlLanzamientosJ2);
      
         // Todo lo de botón lanzar
         
         btnLanzar = new JButton("LANZAR");
         btnLanzar.setBounds(400,450,200,50);
-        btnLanzar.setFont(new Font("arial",Font.BOLD, 20));
+        btnLanzar.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 20));
         jpContenidoGeneral.add(btnLanzar);
         btnLanzar.addActionListener(this);
                 
@@ -175,25 +175,25 @@ public class VentanaDados extends JFrame implements ActionListener{
         jlLanzamientosTotales = new JLabel("Lanzamientos a efectuar "+laPartida.getJugador1().getNumeroLanzamientos());
         jlLanzamientosTotales.setBounds(410, 50, 200, 50);
         jlLanzamientosTotales.setForeground(new Color(0,87,193));
-        jlLanzamientosTotales.setFont(new Font("arial",Font.BOLD, 12)); 
+        jlLanzamientosTotales.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 12)); 
         jpContenidoGeneral.add(jlLanzamientosTotales);
         
         jlGanadorParcial = new JLabel("va ganando: "+laPartida.ganadorParcial());
-        jlGanadorParcial.setBounds(450, 20, 200, 50);
+        jlGanadorParcial.setBounds(450, 20, 250, 50);
         jlGanadorParcial.setForeground(new Color(0,87,193));
-        jlGanadorParcial.setFont(new Font("arial",Font.BOLD, 12)); 
+        jlGanadorParcial.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 12)); 
         jpContenidoGeneral.add(jlGanadorParcial);
         
         jlProximoTirador = new JLabel("tira: "+laPartida.getActualTirador().getNombre());
-        jlProximoTirador.setBounds(450, 400, 200, 50);
+        jlProximoTirador.setBounds(435, 400, 200, 50);
         jlProximoTirador.setForeground(new Color(0,87,193));
-        jlProximoTirador.setFont(new Font("arial",Font.BOLD, 12)); 
+        jlProximoTirador.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 15)); 
         jpContenidoGeneral.add(jlProximoTirador);
         
         jlLanzamientosEmpate = new JLabel("Empates: "+laPartida.getLanzamientosEmpate());
         jlLanzamientosEmpate.setBounds(450, 350, 200, 50);
         jlLanzamientosEmpate.setForeground(new Color(0,87,193));
-        jlLanzamientosEmpate.setFont(new Font("arial",Font.BOLD, 12)); 
+        jlLanzamientosEmpate.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 12)); 
         jpContenidoGeneral.add(jlLanzamientosEmpate);
         
         

@@ -33,22 +33,26 @@ public class VentanaSelecJugador extends JFrame implements ActionListener {
     private Container panel;
     
     public VentanaSelecJugador(){
-        
-        setVisible(true);
-        setSize(600,300);
-        setResizable(false);
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
         iniciarComponentes();
+        setSize(600,300);
+        setVisible(true);
+        setResizable(false);
+        setLocationRelativeTo(null); 
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        
         
     }
     
     private void iniciarComponentes(){
+        //Cooper Black   Arial Rounded MT Bold  
         lblEncabezado = new JLabel("Selecciona cómo quieres jugar");
-        lblEncabezado.setFont(new Font("arial", Font.BOLD, 20)); 
+        lblEncabezado.setFont(new Font("Cooper Black",1,30)); 
         lblEncabezado.setForeground(new Color(0,87,193));
+        
         btnJugadorVsJugador = new JButton ("jugador vs jugador");
+        btnJugadorVsJugador.setFont(new Font("Arial Rounded MT Bold",2, 15));
         btnJugadorVsMaquina = new JButton ("jugador vs maquina");
+        btnJugadorVsMaquina.setFont(new Font("Arial Rounded MT Bold",2, 15));
         
         panel = getContentPane();
         
@@ -60,10 +64,11 @@ public class VentanaSelecJugador extends JFrame implements ActionListener {
         
         btnJugadorVsJugador.setBounds(50, 180, 200, 50);
         btnJugadorVsMaquina.setBounds(350, 180, 200, 50);
-        lblEncabezado.setBounds(150, 80, 400, 30);
+        lblEncabezado.setBounds(40, 80, 610, 40);
         
         btnJugadorVsMaquina.addActionListener(this);
         btnJugadorVsJugador.addActionListener(this);
+        
     }
     
     @Override

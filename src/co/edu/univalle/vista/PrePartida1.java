@@ -83,19 +83,20 @@ public class PrePartida1 extends JFrame {
         
   
         
-        jlNombre1.setBounds(150,10, 519,35);
+        jlNombre1.setBounds(150,80, 519,35);
         jlNombre1.setForeground(new Color(0,87,193));
-        jlNombre1.setFont(new Font("arial", Font.BOLD, 20)); 
+        jlNombre1.setFont(new Font("Cooper Black", Font.BOLD, 20)); 
         
        
         
         jlLanzamientos.setBounds(150,170, 519,35);
         jlLanzamientos.setForeground(new Color(0,87,193));
-        jlLanzamientos.setFont(new Font("arial", Font.BOLD, 20)); 
+        jlLanzamientos.setFont(new Font("Cooper Black", Font.BOLD, 20)); 
         
         
         btnAceptar = new JButton("ACEPTAR");
         btnAceptar.setBounds(200,290, 150,35);
+        btnAceptar.setFont(new Font("Arial Rounded MT Bold",2, 15));
         
         jpContenido.add(btnAceptar);
         
@@ -109,7 +110,7 @@ public class PrePartida1 extends JFrame {
         txtPedirN1 = new JTextField();
         txtPedirN1.setHorizontalAlignment(JTextField.CENTER);
         txtPedirN1.setForeground(Color.GRAY);
-        txtPedirN1.setFont(new Font("arial", Font.BOLD, 20)); 
+        txtPedirN1.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20)); 
         
         
         
@@ -117,14 +118,14 @@ public class PrePartida1 extends JFrame {
         txtPedirLanzamientos = new JTextField();
         txtPedirLanzamientos.setHorizontalAlignment(JTextField.CENTER);
         txtPedirLanzamientos.setForeground(Color.GRAY);
-        txtPedirLanzamientos.setFont(new Font("arial", Font.BOLD, 20)); 
+        txtPedirLanzamientos.setFont(new Font("Arial Rounded MT Bold", Font.BOLD, 20)); 
        
         
         jpContenido.add(txtPedirN1);
         jpContenido.add(txtPedirLanzamientos);
   
         
-        txtPedirN1.setBounds(75,50,410, 40);
+        txtPedirN1.setBounds(75,120,410, 40);
         txtPedirLanzamientos.setBounds(75,210,410, 40);
         
         ManejadorDeEventos manejadorEventos = new ManejadorDeEventos();
