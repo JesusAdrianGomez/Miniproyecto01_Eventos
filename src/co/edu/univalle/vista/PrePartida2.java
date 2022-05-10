@@ -148,18 +148,21 @@ public class PrePartida2 extends JFrame{
     private void comenzarJuego(){
         String nombre = txtPedirN1.getText();
         String nombre2 = txtPedirN2.getText();
-        String Lanzamientos= txtPedirLanzamientos.getText();
-        boolean integerOrNot1 = Lanzamientos.matches("-?\\d+");
+        String lanzamientos= txtPedirLanzamientos.getText();
+        boolean integerOrNot1 = lanzamientos.matches("-?\\d+");
         boolean boolNombre = !nombre.trim().isEmpty() || nombre.trim().length() > 0;
         boolean boolNombre2 = !nombre2.trim().isEmpty() || nombre2.trim().length() > 0;
-        boolean boolLanza = (!Lanzamientos.trim().isEmpty() || Lanzamientos.trim().length() > 0)&&integerOrNot1;
+        boolean boolLanza = (!lanzamientos.trim().isEmpty() || lanzamientos.trim().length() > 0)&&integerOrNot1&&Integer.parseInt(lanzamientos)>0;
         
         
         //int numLanzamientos = Integer.parseInt(txtPedirLanzamientos.getText());
         if(boolNombre&&boolNombre2&&boolLanza){
             
-            System.out.println("llegamos");
-            dispose();                                   
+            int numLanzamientos = Integer.parseInt(lanzamientos);
+            Jugador jugador1 = new Jugador(nombre,numLanzamientos,false);
+            Jugador jugador2 = new Jugador(nombre2,numLanzamientos,false);
+            dispose();                                  
+            VentanaDados juego = new VentanaDados(jugador1, jugador2);                                
         }else if(boolLanza==false)
         {
             JOptionPane.showMessageDialog(null,"Por favor ingrese un numero correcto","Advertencia", JOptionPane.ERROR_MESSAGE);

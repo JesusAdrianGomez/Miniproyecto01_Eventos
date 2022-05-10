@@ -66,8 +66,12 @@ public class Jugador {
     
     /*metodos propios*/
     
-        public void calcularLanzamientosRestantes(){
+        public int getNumeroLanzamientos(){
         
+        return numeroLanzamientos;
+    }
+
+    public void calcularLanzamientosRestantes() {
         lanzamientosRestantes=numeroLanzamientos-lanzamientosRealizados;
     }
         public int puntajeTiro(){
@@ -87,7 +91,7 @@ public class Jugador {
         }
         
         public void cancelarTiro(){
-            lanzamientosRealizados=1;
+            lanzamientosRealizados-=1;
             sumatoriaPuntos-= puntajeTiro();
             calcularLanzamientosRestantes();
         }

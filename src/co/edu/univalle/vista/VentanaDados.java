@@ -45,7 +45,7 @@ public class VentanaDados extends JFrame implements ActionListener{
     private Partida laPartida;
 
     
-    public VentanaDados(Jugador jugador1, Jugador jugador2, int numLanzamientos){
+    public VentanaDados(Jugador jugador1, Jugador jugador2){
         
         laPartida = new Partida(jugador1,jugador2);
         inciarComponentes();
@@ -174,26 +174,78 @@ public class VentanaDados extends JFrame implements ActionListener{
  
     public void finalPartida(){
         if(laPartida.getJugador1().getLanzamientosRestantes()==0&&laPartida.getJugador2().getLanzamientosRestantes()==0){
+            laPartida.indicarGanador();
             
+            if(laPartida.getGanador()==null){
+                JOptionPane.showMessageDialog(null,"Empate con "+laPartida.getJugador1().getSumatoriaPuntos()+" puntos", "Fin de la partida",
+            JOptionPane.INFORMATION_MESSAGE);
+                jugarOtraVez();
+                
+            }else{
+               JOptionPane.showMessageDialog(null,"¡IMPRESIONANTE!, \n "+laPartida.getGanador().getNombre()+ " ha ganado la partida con " +
+               laPartida.getGanador().getSumatoriaPuntos()+
+               " puntos. \n\nFELICITACIONES!!!\n", "Fin de la partida",
+               JOptionPane.INFORMATION_MESSAGE);
+               jugarOtraVez();
+            }
+            
+            
+            
+        }
+    }
+    
+    public void jugarOtraVez(){
+        
+        int respuestaJugar;
+        int respuestaJugadores;
+        
+        
+        respuestaJugar = JOptionPane.showConfirmDialog(
+                null,"¿Desea jugar otra vez?", "Información",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if(respuestaJugar == JOptionPane.YES_OPTION){
+            
+                respuestaJugadores = JOptionPane.showConfirmDialog(
+                null,"¿Desea jugar con los mismos jugadores y número de intentos?", "Información",
+                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                
+                if(respuestaJugadores == JOptionPane.YES_OPTION){
+                    dispose();
+                    Jugador jugador1= new Jugador(laPartida.getJugador1().getNombre()+"",laPartida.getJugador1().getNumeroLanzamientos(),laPartida.getJugador1().getEsMaquina());
+                    Jugador jugador2= new Jugador(laPartida.getJugador2().getNombre()+"",laPartida.getJugador2().getNumeroLanzamientos(),laPartida.getJugador2().getEsMaquina());
+                    VentanaDados nuevaPartida = new VentanaDados(jugador1,jugador2);
+                }else{
+                    dispose();
+                   VentanaSelecJugador nuevaSeleccion = new VentanaSelecJugador();
+                }
+                
+        } else {
+            dispose();
         }
     }
     
     public void pressLanzar(){
         if(laPartida.getJugador2().getEsMaquina()){
+            
             laPartida.tirando();
             laPartida.cambiarTirador();
             laPartida.tirando();
             laPartida.cambiarTirador();
             actualizarPantalla();
             laPartida.verificoEmpate();
+            finalPartida();
+            
            
             
         }else{
+            
             laPartida.tirando();
             laPartida.verificoEmpate();
             actualizarPantalla();
             laPartida.cambiarTirador();
             jlProximoTirador.setText("tira: "+laPartida.getActualTirador().getNombre());
+            finalPartida();
             
         }
     

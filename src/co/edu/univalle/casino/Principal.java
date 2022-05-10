@@ -20,9 +20,7 @@ import co.edu.univalle.vista.VentanaSelecJugador;
 public class Principal {
 
     public static void main(String[] args) {
-        Jugador uno = new Jugador("julian",3,false);
-        Jugador dos = new Jugador("jesus",3,false);
-       VentanaDados prueba = new VentanaDados(uno,dos,2);
+      VentanaSelecJugador partida = new VentanaSelecJugador();
   
     }
 

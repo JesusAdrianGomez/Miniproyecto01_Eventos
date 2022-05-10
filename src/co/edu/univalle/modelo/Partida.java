@@ -98,6 +98,8 @@ public class Partida {
                 ganador=jugador1;
             }else if(jugador2.getSumatoriaPuntos()>jugador1.getSumatoriaPuntos()){
                 ganador=jugador2;
+            }else{
+                ganador = null;
             }
         }
      

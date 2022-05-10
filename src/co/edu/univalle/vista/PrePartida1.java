@@ -4,6 +4,7 @@
  */
 package co.edu.univalle.vista;
 
+import co.edu.univalle.modelo.Jugador;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Toolkit;
@@ -127,17 +128,19 @@ public class PrePartida1 extends JFrame {
     
     private void comenzarJuego(){
         String nombre = txtPedirN1.getText();
-        String Lanzamientos= txtPedirLanzamientos.getText();
-        boolean integerOrNot1 = Lanzamientos.matches("-?\\d+");
+        String lanzamientos= txtPedirLanzamientos.getText();
+        boolean integerOrNot1 = lanzamientos.matches("-?\\d+");
         boolean boolNombre = !nombre.trim().isEmpty() || nombre.trim().length() > 0;
-        boolean boolLanza = (!Lanzamientos.trim().isEmpty() || Lanzamientos.trim().length() > 0)&&integerOrNot1;
+        boolean boolLanza = (!lanzamientos.trim().isEmpty() || lanzamientos.trim().length() > 0)&&integerOrNot1&&Integer.parseInt(lanzamientos)>0;
         
         
         //int numLanzamientos = Integer.parseInt(txtPedirLanzamientos.getText());
         if(boolNombre&&boolLanza){
-            
-            System.out.println("llegamos");
-            dispose();                                   
+            int numLanzamientos = Integer.parseInt(lanzamientos);
+            Jugador jugador1 = new Jugador(nombre,numLanzamientos,false);
+            Jugador jugador2 = new Jugador("Maquina",numLanzamientos,true);
+            dispose();                                  
+            VentanaDados juego = new VentanaDados(jugador1, jugador2);
         }else if(boolLanza==false)
         {
             JOptionPane.showMessageDialog(null,"Por favor ingrese un numero correcto","Advertencia", JOptionPane.ERROR_MESSAGE);
