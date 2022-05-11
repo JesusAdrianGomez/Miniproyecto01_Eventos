@@ -47,7 +47,7 @@ public class VentanaSelecJugador extends JFrame implements ActionListener {
         //Cooper Black   Arial Rounded MT Bold  
         lblEncabezado = new JLabel("Selecciona cómo quieres jugar");
         lblEncabezado.setFont(new Font("Cooper Black",1,30)); 
-        lblEncabezado.setForeground(new Color(0,87,193));
+        lblEncabezado.setForeground(new Color(236,236,236));
         
         btnJugadorVsJugador = new JButton ("jugador vs jugador");
         btnJugadorVsJugador.setFont(new Font("Arial Rounded MT Bold",2, 15));
@@ -57,13 +57,16 @@ public class VentanaSelecJugador extends JFrame implements ActionListener {
         panel = getContentPane();
         
         panel.setLayout(null);
+        panel.setBackground(Color.black);
         
         panel.add(lblEncabezado);
         panel.add(btnJugadorVsJugador);
         panel.add(btnJugadorVsMaquina);
         
         btnJugadorVsJugador.setBounds(50, 180, 200, 50);
+        btnJugadorVsJugador.setBackground(Color.white);
         btnJugadorVsMaquina.setBounds(350, 180, 200, 50);
+        btnJugadorVsMaquina.setBackground(Color.white);
         lblEncabezado.setBounds(40, 80, 610, 40);
         
         btnJugadorVsMaquina.addActionListener(this);

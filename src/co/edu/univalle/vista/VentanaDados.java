@@ -200,7 +200,7 @@ public class VentanaDados extends JFrame implements ActionListener{
          
     }
     
-    private void actualizarLabel(){
+    private void actualizarLabelTiempo(){
         String tiemS = (min<=9?"0":"")+min+":"+(seg<=9?"0":"")+seg;
         time.setText("Tiempo: "+tiemS);
     }
@@ -317,7 +317,7 @@ public class VentanaDados extends JFrame implements ActionListener{
         pressLanzar();
         } 
         if(e.getSource()==tiempo){
-            actualizarLabel();
+            actualizarLabelTiempo();
             seg++; 
             if(seg==60){
                 seg = 0;
