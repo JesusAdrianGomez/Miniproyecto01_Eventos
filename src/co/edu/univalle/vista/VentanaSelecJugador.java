@@ -36,6 +36,7 @@ public class VentanaSelecJugador extends JFrame implements ActionListener {
         iniciarComponentes();
         setSize(600,300);
         setVisible(true);
+        setTitle("Selección de modo");
         setResizable(false);
         setLocationRelativeTo(null); 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -47,26 +48,28 @@ public class VentanaSelecJugador extends JFrame implements ActionListener {
         //Cooper Black   Arial Rounded MT Bold  
         lblEncabezado = new JLabel("Selecciona cómo quieres jugar");
         lblEncabezado.setFont(new Font("Cooper Black",1,30)); 
-        lblEncabezado.setForeground(new Color(236,236,236));
+        lblEncabezado.setForeground(Color.BLACK);
         
         btnJugadorVsJugador = new JButton ("jugador vs jugador");
-        btnJugadorVsJugador.setFont(new Font("Arial Rounded MT Bold",2, 15));
+        btnJugadorVsJugador.setFont(new Font("Arial Rounded MT Bold",1, 15));
         btnJugadorVsMaquina = new JButton ("jugador vs maquina");
-        btnJugadorVsMaquina.setFont(new Font("Arial Rounded MT Bold",2, 15));
+        btnJugadorVsMaquina.setFont(new Font("Arial Rounded MT Bold",1, 15));
         
         panel = getContentPane();
         
         panel.setLayout(null);
-        panel.setBackground(Color.black);
+        panel.setBackground(Color.white);
         
         panel.add(lblEncabezado);
         panel.add(btnJugadorVsJugador);
         panel.add(btnJugadorVsMaquina);
         
         btnJugadorVsJugador.setBounds(50, 180, 200, 50);
-        btnJugadorVsJugador.setBackground(Color.white);
+        btnJugadorVsJugador.setBackground(Color.black);
+        btnJugadorVsJugador.setForeground(Color.white);
         btnJugadorVsMaquina.setBounds(350, 180, 200, 50);
-        btnJugadorVsMaquina.setBackground(Color.white);
+        btnJugadorVsMaquina.setBackground(Color.black);
+        btnJugadorVsMaquina.setForeground(Color.white);
         lblEncabezado.setBounds(40, 80, 610, 40);
         
         btnJugadorVsMaquina.addActionListener(this);

@@ -82,7 +82,7 @@ public class VentanaDados extends JFrame implements ActionListener{
       
         jpContenidoGeneral.setBounds(0, 0, 519,530);
         jpContenidoGeneral.setLayout(null);
-        jpContenidoGeneral.setBackground(Color.WHITE);
+        jpContenidoGeneral.setBackground(Color.white);
         add(jpContenidoGeneral);
         
         //tiempo
@@ -103,23 +103,23 @@ public class VentanaDados extends JFrame implements ActionListener{
         jlLanzamientosJ1 = new JLabel("Lanzamientos efecutados: "+laPartida.getJugador1().getLanzamientosRealizados());
         
         jlNombre1.setBounds(10,10, 200,20);
-        jlNombre1.setForeground(new Color(0,87,193));
+        jlNombre1.setForeground(new Color(0,0,0));
         jlNombre1.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 12)); 
         jpContenidoGeneral.add(jlNombre1);
         
                 
         jlSumPuntaje1.setBounds(70,180, 200,70);
-        jlSumPuntaje1.setForeground(new Color(45,87,193));
+        jlSumPuntaje1.setForeground(new Color(0,0,0));
         jlSumPuntaje1.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 70)); 
         jpContenidoGeneral.add(jlSumPuntaje1);
         
         jlTirosRestantes1.setBounds(10,400, 200,20);
-        jlTirosRestantes1.setForeground(new Color(0,87,193));
+        jlTirosRestantes1.setForeground(new Color(0,0,0));
         jlTirosRestantes1.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 12)); 
         jpContenidoGeneral.add(jlTirosRestantes1);
         
         jlLanzamientosJ1.setBounds(10,450, 200,20);
-        jlLanzamientosJ1.setForeground(new Color(0,87,193));
+        jlLanzamientosJ1.setForeground(new Color(0,0,0));
         jlLanzamientosJ1.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 12)); 
         jpContenidoGeneral.add(jlLanzamientosJ1);
         
@@ -131,23 +131,23 @@ public class VentanaDados extends JFrame implements ActionListener{
         jlLanzamientosJ2 = new JLabel ("Lanzamientos efecutados: "+laPartida.getJugador2().getLanzamientosRealizados());
         
         jlNombre2.setBounds(800,10, 200,20);
-        jlNombre2.setForeground(new Color(0,87,193));
+        jlNombre2.setForeground(new Color(0,0,0));
         jlNombre2.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 12)); 
         jpContenidoGeneral.add(jlNombre2);
         
                 
         jlSumPuntaje2.setBounds(850,180, 200,70);
-        jlSumPuntaje2.setForeground(new Color(45,87,193));
+        jlSumPuntaje2.setForeground(new Color(0,0,0));
         jlSumPuntaje2.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 70)); 
         jpContenidoGeneral.add(jlSumPuntaje2);
         
         jlTirosRestantes2.setBounds(790,400, 200,20);
-        jlTirosRestantes2.setForeground(new Color(0,87,193));
+        jlTirosRestantes2.setForeground(new Color(0,0,0));
         jlTirosRestantes2.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 12)); 
         jpContenidoGeneral.add(jlTirosRestantes2);
         
         jlLanzamientosJ2.setBounds(790,450, 200,20);
-        jlLanzamientosJ2.setForeground(new Color(0,87,193));
+        jlLanzamientosJ2.setForeground(new Color(0,0,0));
         jlLanzamientosJ2.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 12)); 
         jpContenidoGeneral.add(jlLanzamientosJ2);
      
@@ -156,6 +156,8 @@ public class VentanaDados extends JFrame implements ActionListener{
         btnLanzar = new JButton("LANZAR");
         btnLanzar.setBounds(400,450,200,50);
         btnLanzar.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 20));
+        btnLanzar.setBackground(Color.black);
+        btnLanzar.setForeground(new Color(236,236,236));
         jpContenidoGeneral.add(btnLanzar);
         btnLanzar.addActionListener(this);
                 
@@ -174,25 +176,25 @@ public class VentanaDados extends JFrame implements ActionListener{
         
         jlLanzamientosTotales = new JLabel("Lanzamientos a efectuar "+laPartida.getJugador1().getNumeroLanzamientos());
         jlLanzamientosTotales.setBounds(410, 50, 200, 50);
-        jlLanzamientosTotales.setForeground(new Color(0,87,193));
+        jlLanzamientosTotales.setForeground(new Color(0,0,0));
         jlLanzamientosTotales.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 12)); 
         jpContenidoGeneral.add(jlLanzamientosTotales);
         
         jlGanadorParcial = new JLabel("va ganando: "+laPartida.ganadorParcial());
         jlGanadorParcial.setBounds(450, 20, 250, 50);
-        jlGanadorParcial.setForeground(new Color(0,87,193));
+        jlGanadorParcial.setForeground(new Color(0,0,0));
         jlGanadorParcial.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 12)); 
         jpContenidoGeneral.add(jlGanadorParcial);
         
         jlProximoTirador = new JLabel("tira: "+laPartida.getActualTirador().getNombre());
         jlProximoTirador.setBounds(435, 400, 200, 50);
-        jlProximoTirador.setForeground(new Color(0,87,193));
+        jlProximoTirador.setForeground(new Color(0,0,0));
         jlProximoTirador.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 15)); 
         jpContenidoGeneral.add(jlProximoTirador);
         
         jlLanzamientosEmpate = new JLabel("Empates: "+laPartida.getLanzamientosEmpate());
         jlLanzamientosEmpate.setBounds(450, 350, 200, 50);
-        jlLanzamientosEmpate.setForeground(new Color(0,87,193));
+        jlLanzamientosEmpate.setForeground(new Color(0,0,0));
         jlLanzamientosEmpate.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 12)); 
         jpContenidoGeneral.add(jlLanzamientosEmpate);
         
@@ -243,7 +245,7 @@ public class VentanaDados extends JFrame implements ActionListener{
             }else{
                JOptionPane.showMessageDialog(null,"¡IMPRESIONANTE!, \n "+laPartida.getGanador().getNombre()+ " ha ganado la partida con " +
                laPartida.getGanador().getSumatoriaPuntos()+
-               " puntos. \n\nFELICITACIONES!!!\n", "Fin de la partida",
+               " puntos \n número de tiros: "+laPartida.getJugador1().getLanzamientosRealizados()+ "\n número de empates: "+laPartida.getLanzamientosEmpate(), "Fin de la partida",
                JOptionPane.INFORMATION_MESSAGE);
                jugarOtraVez();
             }

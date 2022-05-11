@@ -77,6 +77,7 @@ public class PrePartida2 extends JFrame{
         jpContenido = new JPanel();      
         jpContenido.setBounds(0,0, 600, 400);
         jpContenido.setLayout(null);
+        jpContenido.setBackground(Color.white);
         
         add(jpContenido);
         
@@ -93,23 +94,25 @@ public class PrePartida2 extends JFrame{
   
         
         jlNombre1.setBounds(150,10, 519,35);
-        jlNombre1.setForeground(new Color(0,87,193));
+        jlNombre1.setForeground(Color.BLACK);
         jlNombre1.setFont(new Font("Cooper Black", Font.BOLD, 20)); 
         
         
                 
         jlNombre2.setBounds(150,90, 519,35);
-        jlNombre2.setForeground(new Color(0,87,193));
+        jlNombre2.setForeground(Color.BLACK);
         jlNombre2.setFont(new Font("Cooper Black", Font.BOLD, 20)); 
         
         jlLanzamientos.setBounds(150,170, 519,35);
-        jlLanzamientos.setForeground(new Color(0,87,193));
+        jlLanzamientos.setForeground(Color.BLACK);
         jlLanzamientos.setFont(new Font("Cooper Black", Font.BOLD, 20)); 
         
         
         btnAceptar = new JButton("ACEPTAR");
         btnAceptar.setBounds(200,290, 150,35);
-        btnAceptar.setFont(new Font("Arial Rounded MT Bold",2, 15));
+        btnAceptar.setFont(new Font("Arial Rounded MT Bold",1, 15));
+        btnAceptar.setBackground(Color.black);
+        btnAceptar.setForeground(Color.white);
         
         jpContenido.add(btnAceptar);
         
