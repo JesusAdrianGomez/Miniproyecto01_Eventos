@@ -32,9 +32,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JSpinner;
 import javax.swing.JTextField;
-import javax.swing.SwingConstants;
 
 /**
  *
@@ -69,7 +67,6 @@ public class VentanaPrePartida2 extends JFrame{
         setResizable(false);
         setLayout(null);
         
-        Toolkit miPantalla = Toolkit.getDefaultToolkit();
         
         
         

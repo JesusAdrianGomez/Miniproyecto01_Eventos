@@ -58,7 +58,7 @@ public class VentanaDados extends JFrame implements ActionListener{
     private Partida laPartida;
     private Timer tiempo;
     private int min,seg;
-    private JLabel time;
+    private JLabel jlTime;
 
     
     public VentanaDados(Jugador jugador1, Jugador jugador2){
@@ -90,9 +90,9 @@ public class VentanaDados extends JFrame implements ActionListener{
         tiempo.start();
         
         String tiemS = (min<=9?"0":"")+min+":"+(seg<=9?"0":"")+seg;
-        time = new JLabel("Tiempo: "+tiemS);
-        time.setBounds(445,5, 200, 40);
-        jpContenidoGeneral.add(time);
+        jlTime = new JLabel("Tiempo: "+tiemS);
+        jlTime.setBounds(445,5, 200, 40);
+        jpContenidoGeneral.add(jlTime);
         
         
         //todos los datos de jugador1
@@ -174,7 +174,7 @@ public class VentanaDados extends JFrame implements ActionListener{
         
         //todo lo general
         
-        jlLanzamientosTotales = new JLabel("Lanzamientos a efectuar "+laPartida.getJugador1().getNumeroLanzamientos());
+        jlLanzamientosTotales = new JLabel("Lanzamientos a efectuar "+laPartida.getJugador2().getNumeroLanzamientos());
         jlLanzamientosTotales.setBounds(410, 50, 200, 50);
         jlLanzamientosTotales.setForeground(new Color(0,0,0));
         jlLanzamientosTotales.setFont(new Font("Arial Rounded MT Bold",Font.BOLD, 12)); 
@@ -204,7 +204,7 @@ public class VentanaDados extends JFrame implements ActionListener{
     
     private void actualizarLabelTiempo(){
         String tiemS = (min<=9?"0":"")+min+":"+(seg<=9?"0":"")+seg;
-        time.setText("Tiempo: "+tiemS);
+        jlTime.setText("Tiempo: "+tiemS);
     }
     
     private void actualizarPantalla(){
@@ -229,9 +229,6 @@ public class VentanaDados extends JFrame implements ActionListener{
          
     }
     
-    public void actualizarTirador(){
-        jlProximoTirador.setText("tira: "+laPartida.getActualTirador().getNombre());
-    }
  
     public void finalPartida(){
         if(laPartida.getJugador1().getLanzamientosRestantes()==0&&laPartida.getJugador2().getLanzamientosRestantes()==0){
