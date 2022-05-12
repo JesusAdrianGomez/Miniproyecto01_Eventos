@@ -36,7 +36,7 @@ import javax.swing.JTextField;
  *
  * @author Jesus Adrian Gomez Cadena <jesus.cadena@correounivalle.edu.co> GitHub: https://github.com/JesusAdrianGomez
  */
-public class PrePartida1 extends JFrame {
+public class VentanaPrePartida1 extends JFrame {
      private JPanel jpContenido;
     private JLabel jlNombre1;
     private JLabel jlLanzamientos;
@@ -46,7 +46,7 @@ public class PrePartida1 extends JFrame {
  
 
     
-    public PrePartida1(){
+    public VentanaPrePartida1(){
         iniciarComponentes();
        
     }

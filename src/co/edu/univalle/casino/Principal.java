@@ -12,8 +12,8 @@ package co.edu.univalle.casino;
  * Numero laboratorio: 1
  */
 import co.edu.univalle.modelo.Jugador;
-import co.edu.univalle.vista.PrePartida1;
-import co.edu.univalle.vista.PrePartida2;
+import co.edu.univalle.vista.VentanaPrePartida1;
+import co.edu.univalle.vista.VentanaPrePartida2;
 import co.edu.univalle.vista.VentanaDados;
 import co.edu.univalle.vista.VentanaSelecJugador;
 

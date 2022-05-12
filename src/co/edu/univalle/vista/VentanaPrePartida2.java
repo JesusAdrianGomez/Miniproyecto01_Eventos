@@ -40,7 +40,7 @@ import javax.swing.SwingConstants;
  *
  * @author Jesus Adrian Gomez Cadena <jesus.cadena@correounivalle.edu.co> GitHub: https://github.com/JesusAdrianGomez
  */
-public class PrePartida2 extends JFrame{
+public class VentanaPrePartida2 extends JFrame{
     
     private JPanel jpContenido;
     private JLabel jlNombre1;
@@ -53,7 +53,7 @@ public class PrePartida2 extends JFrame{
  
 
     
-    public PrePartida2(){
+    public VentanaPrePartida2(){
         iniciarComponentes();
        
     }
