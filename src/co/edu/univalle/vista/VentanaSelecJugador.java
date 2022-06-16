@@ -24,6 +24,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.border.LineBorder;
+import javax.swing.plaf.basic.BasicBorders;
 
 public class VentanaSelecJugador extends JFrame implements ActionListener {
     
@@ -54,6 +56,8 @@ public class VentanaSelecJugador extends JFrame implements ActionListener {
         btnJugadorVsJugador.setFont(new Font("Arial Rounded MT Bold",1, 15));
         btnJugadorVsMaquina = new JButton ("jugador vs maquina");
         btnJugadorVsMaquina.setFont(new Font("Arial Rounded MT Bold",1, 15));
+        
+        btnJugadorVsJugador.setBorder(new LineBorder(Color.green, 8,false)/*BasicBorders.RadioButtonBorder(Color.GREEN, Color.GREEN, Color.GREEN, Color.GREEN)*/);
         
         panel = getContentPane();
         
